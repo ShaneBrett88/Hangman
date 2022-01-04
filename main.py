@@ -54,7 +54,7 @@ def play_hangman(hello, player, again):
             break
         elif play_input == "no":
             print("")
-            print("Thank you for Playing!") 
+            print("Thank you. Goodbye!") 
             play = False
             break
         else:
