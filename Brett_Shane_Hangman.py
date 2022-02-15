@@ -1,5 +1,6 @@
-from random import randint
+# from random import randint
 import os
+import random
 
 #Clear screen at end of the game
 def clear_screen_end():
@@ -8,8 +9,8 @@ def clear_screen_end():
     print("")
     print(hangman(guesses))
     print("")
-    print(wordLetterListHidden)
-    print("")
+    print(wordSTR)
+
 
 #Clear screen during play  
 def clear_screen_play():
@@ -23,8 +24,8 @@ def clear_screen_play():
     print("")
     print(hangman(guesses))
     print("")
-    print(wordLetterListHidden)
-    print("")
+    print(wordSTR)    
+
 
 #Display of the Hangman
 def hangman(lives):
@@ -43,7 +44,8 @@ def import_word():
     words = [word for word in open('word_list.txt')]
     for word in words:
         wordList = word.split()
-    wordResult = wordList[randint(0,len(wordList)-1)].upper()
+    wordResult = random.choice(wordList) 
+    # wordResult = wordList[randint(0,len(wordList)-1)].upper()
     return wordResult
 
 #Import a random word
@@ -72,6 +74,7 @@ for letter in wordResult:
 # The main game
 while guesses > 0:
     
+    wordSTR = ''.join([str(item) for item in wordLetterListHidden])
     #Ask for player's guess
     clear_screen_play()
     if guessedTrigger == True:
