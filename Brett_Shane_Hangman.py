@@ -44,7 +44,7 @@ def import_word():
     words = [word for word in open('word_list.txt')]
     for word in words:
         wordList = word.split()
-    wordResult = random.choice(wordList) 
+    wordResult = random.choice(wordList).upper() 
     # wordResult = wordList[randint(0,len(wordList)-1)].upper()
     return wordResult
 
